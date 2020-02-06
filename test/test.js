@@ -21,6 +21,7 @@ describe('Searchquire examples', () => {
   describe('Temperature convert service', () => {
     it('Example 1 - Simple es5 implementation should return 0', async () => {
       const service = searchquire('../src/example1/tempConvertService', {
+        useBabelRegister: true,
         https: new HttpMock(responseData)
       });
       const temperature = await service.fahrenheitToCelsius(32);
@@ -28,6 +29,7 @@ describe('Searchquire examples', () => {
     });
     it('Example 2 - Refactored es6 implementation should return 0', async () => {
       const service = searchquire('../src/example2/tempConvertService', {
+        useBabelRegister: true,
         https: new HttpMock(responseData)
       });
       const temperature = await service.fahrenheitToCelsius(32);

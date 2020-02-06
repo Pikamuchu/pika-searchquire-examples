@@ -3,16 +3,14 @@ import { soapCall } from './soapUtils';
 export const fahrenheitToCelsiusCall = async tempFahrenheit => {
   let response;
   try {
-    response = (
-      await soapCall(createFahrenheitToCelsiusSoapParams(), createFahrenheitToCelsiusSoapData(tempFahrenheit))
-    ).FahrenheitToCelsiusResponse;
+    response = (await soapCall(createSoapParams(), createSoapData(tempFahrenheit))).FahrenheitToCelsiusResponse;
   } catch (e) {
     console.log('Error ' + e);
   }
   return response;
 };
 
-const createFahrenheitToCelsiusSoapParams = () => ({
+const createSoapParams = () => ({
   hostname: 'www.w3schools.com',
   port: 443,
   path: '/xml/tempconvert.asmx',
@@ -23,7 +21,7 @@ const createFahrenheitToCelsiusSoapParams = () => ({
   }
 });
 
-const createFahrenheitToCelsiusSoapData = tempFahrenheit => (
+const createSoapData = tempFahrenheit => (
   <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">
     <Fahrenheit>{tempFahrenheit}</Fahrenheit>
   </FahrenheitToCelsius>
