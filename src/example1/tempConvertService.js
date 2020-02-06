@@ -1,7 +1,7 @@
 var https = require('https');
 
 export function fahrenheitToCelsius(tempFahrenheit) {
-  return new Promise(function(resolve) {
+  return new Promise(function (resolve) {
     var req = https.request(
       {
         hostname: 'www.w3schools.com',
@@ -13,20 +13,20 @@ export function fahrenheitToCelsius(tempFahrenheit) {
           SOAPAction: 'https://www.w3schools.com/xml/FahrenheitToCelsius'
         }
       },
-      function(res) {
+      function (res) {
         res.on('data', function (data) {
-          resolve(data);
+          resolve(/\<FahrenheitToCelsiusResult\>(\d)\<\/FahrenheitToCelsiusResult\>/.exec(data)[1]);
         });
       }
     );
     req.write(
       '<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">' +
-        '  <soap12:Body>' +
-        '    <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">' +
-        '      <Fahrenheit>' + tempFahrenheit + '</Fahrenheit>' +
-        '    </FahrenheitToCelsius>' +
-        '  </soap12:Body>' +
-        '</soap12:Envelope>'
+      '  <soap12:Body>' +
+      '    <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">' +
+      '      <Fahrenheit>' + tempFahrenheit + '</Fahrenheit>' +
+      '    </FahrenheitToCelsius>' +
+      '  </soap12:Body>' +
+      '</soap12:Envelope>'
     );
     req.end();
   });

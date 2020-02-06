@@ -1,16 +1,10 @@
-# babel-plugin-transform-simple-e4x-soap-client-example
+# Searchquire examples
 
-Soap web service client example using babel-plugin-transform-simple-e4x
-
-## Features
-
-* Simple4x
-* Babel 7
-* Nodemon
+Searchquire usage examples
 
 ## Installation
 
-Download the code example and execute:
+Download the code examples and execute:
 
 ```shell
 $ npm install
@@ -18,10 +12,8 @@ $ npm install
 
 ## Usage
 
-Start a development server with "hot reload" using:
+Execute tests using:
 
 ```shell
-$ npm start
+$ npm test
 ```
-
-See logs for web service call details.
