@@ -1,10 +1,29 @@
 {
   "name": "searchquire-examples",
+  "version": "1.0.0",
+  "description": "Searchquire usage examples",
+  "main": "./src/index.js",
   "scripts": {
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "build": "babel src -d dist",
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "mocha --require @babel/register"
+    "test": "nyc mocha --require @babel/register"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pikamachu/pika-searchquire-examples.git"
+  },
+  "keywords": [
+    "test",
+    "require",
+    "mock"
+  ],
+  "author": "Antonio Marin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pikamachu/pika-searchquire-examples/issues"
+  },
+  "homepage": "https://github.com/pikamachu/pika-searchquire-examples#readme",
   "dependencies": {
     "simple4x": "^1.2.0"
   },
@@ -18,11 +37,16 @@
     "@babel/runtime": "^7.4.0",
     "chai": "^4.2.0",
     "chai-subset": "^1.5.0",
+    "codecov": "^3.5.0",
     "babel-plugin-transform-simple-e4x": "^1.2.2",
     "eslint": "5.9.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-mocha": "^5.3.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
+    "nyc": "^14.1.1",
+    "prettier": "^1.13.0",
     "sinon": "^7.1.1",
     "searchquire": "^1.4.1"
   }
