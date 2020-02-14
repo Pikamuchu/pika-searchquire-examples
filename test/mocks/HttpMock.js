@@ -1,5 +1,8 @@
+import XML from 'simple4x';
+
 export default class HttpMock {
   constructor(responseData) {
+    this.requestData = null;
     this.responseData = responseData;
     this.options = null;
   }
@@ -15,8 +18,11 @@ export default class HttpMock {
     callback(response);
     onDataFunction(this.responseData);
     return {
-      write: () => {},
-      end: () => {},
+      on: () => {},
+      write: (requestData) => {
+        this.requestData = new XML(requestData).toXMLString();
+      },
+      end: () => {}
     };
   }
 }

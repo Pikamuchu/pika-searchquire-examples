@@ -1,5 +1,4 @@
 #!/bin/bash
-
 COMMAND="$1"
 shift
 PARAMS="$@"
@@ -7,11 +6,11 @@ PARAMS="$@"
 if [ "$COMMAND" = "install" ]; then
   echo "* Installing node_modules..."
   npm install
-
+ 
 elif [ "$COMMAND" = "test" ]; then
   echo "* Testing..."
   npm test
-
+ 
 elif [ "$COMMAND" = "start" ]; then
   echo "* Starting..."
   npm start
@@ -24,6 +23,5 @@ else
   echo "   install -> install application dependencies."
   echo "   test -> execute application tests."
   echo "   start -> start application in develop mode."
-
   exit 1
 fi

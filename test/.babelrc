@@ -4,5 +4,7 @@
     "@babel/transform-runtime",
     "babel-plugin-transform-simple-e4x"
   ],
-  "ignore": ["node_modules"]
+  "ignore": ["node_modules"],
+  "sourceMaps": "inline",
+  "retainLines": true
 }

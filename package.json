@@ -35,19 +35,20 @@
     "@babel/plugin-transform-runtime": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@babel/runtime": "^7.4.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-transform-simple-e4x": "^1.2.2",
     "chai": "^4.2.0",
     "chai-subset": "^1.5.0",
     "codecov": "^3.5.0",
-    "babel-plugin-transform-simple-e4x": "^1.2.2",
-    "eslint": "5.9.0",
+    "eslint": "^5.9.0",
     "eslint-config-prettier": "^3.1.0",
-    "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "mocha": "^5.2.0",
     "nodemon": "^1.17.5",
     "nyc": "^14.1.1",
     "prettier": "^1.13.0",
-    "sinon": "^7.1.1",
-    "searchquire": "^1.4.1"
+    "searchquire": "^1.4.1",
+    "sinon": "^7.1.1"
   }
 }

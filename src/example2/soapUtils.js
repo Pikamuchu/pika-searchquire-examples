@@ -3,16 +3,15 @@ import XML from 'simple4x';
 
 export const soapCall = (params, soapData) => {
   return new Promise(function(resolve, reject) {
-    var req = https.request(params, function(res) {
+    const req = https.request(params, function(res) {
       if (res.statusCode < 200 || res.statusCode >= 300) {
         return reject(new Error('statusCode=' + res.statusCode));
       }
       res.on('data', data => {
         const response = new XML(data);
-        resolve(response['soap:Body']);
+        resolve(response['soap12:Body'] || response['soap:Body']);
       });
     });
-    // reject on request error
     req.on('error', function(err) {
       reject(err);
     });
