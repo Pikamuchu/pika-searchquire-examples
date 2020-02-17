@@ -10,6 +10,10 @@ if [ "$COMMAND" = "install" ]; then
 elif [ "$COMMAND" = "test" ]; then
   echo "* Testing..."
   npm test
+  
+elif [ "$COMMAND" = "coverage" ]; then
+  echo "* Coverage..."
+  npm run coverage
  
 elif [ "$COMMAND" = "start" ]; then
   echo "* Starting..."
